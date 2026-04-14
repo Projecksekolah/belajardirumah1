@@ -1,550 +1,559 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta property="og:title" content="🎓 Pembelajaran Matematika!">
-<meta property="og:description" content="Platform belajar matematika Daring kelas 7 dan 8. Klik untuk mulai belajar sekarang!">
-<meta property="og:image" content="https://i.pinimg.com/736x/20/e8/84/20e8841f5affea0cb88ca9e171eda985.jpg">
-<meta property="og:url" content="https://bertartrusselmathmen2026.github.io/belajardirumah1/">
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECourse Matematika</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --bg-gradient: radial-gradient(circle at top right, #1e293b, #0f172a);
-            --glass-bg: rgba(30, 41, 59, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --card-bg: #111827; 
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            /* Biru yang lebih soft, tenang, dan tidak mencolok untuk Dark Mode */
-            --accent: #5A98F2; 
-            --accent-hover: #427DE0;
-            --stamp-color: #10b981;
-            --panel-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            --btn-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
-            --btn-shadow-hover: 0 18px 34px rgba(0, 0, 0, 0.34);
-            /* Glow biru kalem */
-            --neon-glow: linear-gradient(90deg, #5A98F2, #85B3F8, #427DE0, #73A5F5);
-        }
-
-        [data-theme="light"] {
-            --bg-color: #f8fafc;
-            --bg-gradient: radial-gradient(circle at top right, #ffffff, #e2e8f0);
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(203, 213, 225, 0.6);
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            /* Biru yang lebih soft dan elegan untuk Light Mode */
-            --accent: #3E79D6; 
-            --accent-hover: #2B5CB5;
-            --stamp-color: #059669;
-            --panel-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
-            --btn-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
-            --btn-shadow-hover: 0 16px 30px rgba(15, 23, 42, 0.18);
-            /* Glow biru kalem versi terang */
-            --neon-glow: linear-gradient(90deg, #3E79D6, #5A98F2, #2B5CB5, #4D8CEB);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-color);
-            background-image: var(--bg-gradient);
-            background-attachment: fixed;
-            min-height: 100vh;
-            transition: background 0.4s ease, color 0.4s ease;
-            overflow-x: hidden;
-        }
-
-        .theme-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        #theme-toggle-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid var(--glass-border);
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: var(--text-main);
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--btn-shadow);
-        }
-
-        #theme-toggle-btn:hover {
-            background: var(--text-main);
-            color: var(--bg-color);
-            transform: scale(1.05);
-            box-shadow: var(--btn-shadow-hover);
-        }
-
-        .glass-panel {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            box-shadow: var(--panel-shadow);
-            padding: 2.5rem;
-            margin-top: 20px;
-            transition: all 0.4s ease;
-        }
-
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 1.8rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .stamp-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(4) rotate(-30deg);
-            opacity: 0;
-            pointer-events: none;
-            border: 5px solid var(--stamp-color);
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: var(--stamp-color);
-            font-weight: 800;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(2px);
-        }
-
-        .stamp-overlay.show {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1) rotate(-15deg);
-        }
-
-        .card-completed {
-            opacity: 0.6;
-            filter: grayscale(0.2);
-            pointer-events: none;
-        }
-
-        .text-accent {
-            color: var(--accent);
-        }
-
-        .btn-modern {
-            background: var(--accent);
-            color: #ffffff !important;
-            border: none;
-            border-radius: 12px;
-            padding: 14px 28px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--btn-shadow);
-        }
-
-        .btn-modern:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
-        }
-
-        .btn-outline-modern {
-            border: 1.5px solid var(--accent);
-            color: var(--accent) !important;
-            border-radius: 12px;
-            padding: 10px 20px;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            background: transparent;
-            box-shadow: var(--btn-shadow);
-        }
-
-        .btn-outline-modern:hover {
-            background: var(--accent);
-            color: #ffffff !important;
-            transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
-        }
-
-        .btn-icon-only {
-            width: 45px;
-            height: 45px;
-            padding: 0;
-            border-radius: 50%;
-        }
-
-        .btn-square-back {
-            min-width: 132px;
-            height: 48px;
-            padding: 0 16px;
-            border-radius: 14px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.45rem;
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            color: var(--text-main) !important;
-            box-shadow: var(--btn-shadow);
-            text-decoration: none;
-            backdrop-filter: blur(10px);
-            white-space: nowrap;
-            font-weight: 600;
-        }
-
-        [data-theme="light"] .btn-square-back {
-            background: rgba(255, 255, 255, 0.75);
-            border: 1px solid rgba(148, 163, 184, 0.22);
-        }
-
-        .btn-square-back:hover {
-            background: var(--accent);
-            color: #fff !important;
-            transform: translateY(-2px);
-            box-shadow: var(--btn-shadow-hover);
-        }
-
-        .btn-square-back .btn-label {
-            font-size: 0.92rem;
-            font-weight: 600;
-            line-height: 1;
-        }
-
-        .btn-square-back .btn-icon-small {
-            font-size: 1rem;
-            line-height: 1;
-        }
-
-        .form-select-modern {
-            background-color: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            border-radius: 12px;
-            padding: 14px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .form-select-modern:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(90, 152, 242, 0.2);
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .materi-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .text-opacity {
-            color: var(--text-muted);
-        }
-
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            padding: 20px;
-        }
-
-        .popup-overlay.show {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .popup-content {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 420px;
-            width: 100%;
-            text-align: center;
-            box-shadow: var(--panel-shadow);
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .popup-overlay.show .popup-content {
-            transform: translateY(0);
-        }
-
-        .btn-close-popup {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--btn-shadow);
-        }
-
-        .btn-close-popup:hover {
-            color: var(--accent);
-            background: var(--card-bg);
-            transform: scale(1.05);
-            box-shadow: var(--btn-shadow-hover);
-        }
-
-        /* ===== KARTU INFORMASI MINIMALIS ===== */
-        .neon-card {
-            position: relative;
-            border-radius: 20px;
-            padding: 1.5rem;
-            background: transparent;
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            text-align: center;
-            margin-bottom: 1.25rem;
-            z-index: 1;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
-        }
-
-        [data-theme="light"] .neon-card {
-            border-color: rgba(148, 163, 184, 0.24);
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-        }
-
-        .neon-card-subtitle {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: .08em;
-        }
-
-        .neon-card-title {
-            color: var(--text-main);
-            font-size: clamp(2.2rem, 6vw, 3.6rem);
-            font-weight: 800;
-            margin: 0;
-            line-height: 1.05;
-            letter-spacing: 0.4px;
-            text-wrap: balance;
-            animation: titleFloat 3s ease-in-out infinite;
-            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-        }
-
-        .judul-bergerak {
-            display: inline-block;
-            will-change: transform;
-        }
-
-        .neon-status-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .status-item {
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            border-radius: 16px;
-            padding: 0.85rem 0.75rem;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
-        [data-theme="light"] .status-item {
-            background: rgba(255, 255, 255, 0.45);
-            border-color: rgba(148, 163, 184, 0.22);
-        }
-
-        .status-label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.35rem;
-            font-size: 0.88rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .status-selesai { color: #22c55e; }
-        .status-sudah { color: #eab308; }
-        .status-belum { color: #ef4444; }
-
-        .status-value {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-main);
-            line-height: 1;
-        }
-
-        @keyframes titleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-        }
-
-        #wadah-materi > [class*="col-"] {
-            display: flex;
-        }
-
-        #wadah-materi .glass-card {
-            width: 100%;
-        }
-
-        #btn-ganti-kelas {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-
-        @media (max-width: 576px) {
-            .glass-panel {
-                padding: 1.5rem;
-                border-radius: 16px;
-            }
-
-            .glass-card {
-                padding: 1.5rem;
-            }
-
-            h1.fw-bold {
-                font-size: 1.8rem;
-            }
-
-            .display-3 {
-                font-size: 3rem;
-            }
-
-            .theme-switch {
-                top: 15px;
-                right: 15px;
-            }
-
-            #theme-toggle-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-
-            #btn-ganti-kelas {
-                top: 15px;
-                left: 15px;
-            }
-
-            .btn-square-back {
-                min-width: 110px;
-                height: 42px;
-                padding: 0 12px;
-                border-radius: 12px;
-            }
-
-            .popup-content {
-                padding: 2rem 1.4rem;
-            }
-
-            /* Responsive Kartu Neon */
-            .neon-card {
-                padding: 1.1rem;
-            }
-
-            .neon-card-title {
-                font-size: clamp(1.95rem, 8.8vw, 2.8rem);
-            }
-
-            .neon-status-grid {
-                gap: 0.5rem;
-            }
-
-            .status-item {
-                padding: 0.7rem 0.5rem;
-                border-radius: 14px;
-            }
-
-            .status-label {
-                font-size: 0.8rem;
-            }
-
-            .status-value {
-                font-size: 1.05rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Belajar Matematika Daring</title>
+  <meta name="description" content="Platform belajar matematika daring kelas 7 dan 8. Materi, video, referensi, dan tugas bisa diakses langsung dari rumah.">
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SMP Avisena Jabon" />
+  <meta property="og:title" content="🎓 Belajar Matematika Jadi Mudah & Seru!" />
+  <meta property="og:description" content="Platform belajar matematika daring kelas 7 dan 8. Materi, video, referensi, dan tugas bisa diakses langsung dari rumah." />
+  <meta property="og:url" content="https://bertartrusselmathmen2026.github.io/belajardirumah1/" />
+  <meta property="og:image" content="https://i.pinimg.com/736x/20/e8/84/20e8841f5affea0cb88ca9e171eda985.jpg" />
+  <meta property="og:image:secure_url" content="https://i.pinimg.com/736x/20/e8/84/20e8841f5affea0cb88ca9e171eda985.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="736" />
+  <meta property="og:image:height" content="1104" />
+
+  <!-- Twitter / fallback preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🎓 Belajar Matematika Jadi Mudah & Seru!" />
+  <meta name="twitter:description" content="Platform belajar matematika daring kelas 7 dan 8. Materi, video, referensi, dan tugas bisa diakses langsung dari rumah." />
+  <meta name="twitter:image" content="https://i.pinimg.com/736x/20/e8/84/20e8841f5affea0cb88ca9e171eda985.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --bg-gradient: radial-gradient(circle at top right, #1e293b, #0f172a);
+      --glass-bg: rgba(30, 41, 59, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --card-bg: #111827; 
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #5A98F2; 
+      --accent-hover: #427DE0;
+      --stamp-color: #10b981;
+      --panel-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --btn-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+      --btn-shadow-hover: 0 18px 34px rgba(0, 0, 0, 0.34);
+      --neon-glow: linear-gradient(90deg, #5A98F2, #85B3F8, #427DE0, #73A5F5);
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f8fafc;
+      --bg-gradient: radial-gradient(circle at top right, #ffffff, #e2e8f0);
+      --glass-bg: rgba(255, 255, 255, 0.7);
+      --glass-border: rgba(203, 213, 225, 0.6);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --accent: #3E79D6; 
+      --accent-hover: #2B5CB5;
+      --stamp-color: #059669;
+      --panel-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+      --btn-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      --btn-shadow-hover: 0 16px 30px rgba(15, 23, 42, 0.18);
+      --neon-glow: linear-gradient(90deg, #3E79D6, #5A98F2, #2B5CB5, #4D8CEB);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      min-height: 100vh;
+      transition: background 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    .theme-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    #theme-toggle-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--text-main);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--btn-shadow);
+    }
+
+    #theme-toggle-btn:hover {
+      background: var(--text-main);
+      color: var(--bg-color);
+      transform: scale(1.05);
+      box-shadow: var(--btn-shadow-hover);
+    }
+
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--panel-shadow);
+      padding: 2.5rem;
+      margin-top: 20px;
+      transition: all 0.4s ease;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .stamp-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(4) rotate(-30deg);
+      opacity: 0;
+      pointer-events: none;
+      border: 5px solid var(--stamp-color);
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: var(--stamp-color);
+      font-weight: 800;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2px);
+    }
+
+    .stamp-overlay.show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1) rotate(-15deg);
+    }
+
+    .card-completed {
+      opacity: 0.6;
+      filter: grayscale(0.2);
+      pointer-events: none;
+    }
+
+    .text-accent {
+      color: var(--accent);
+    }
+
+    .btn-modern {
+      background: var(--accent);
+      color: #ffffff !important;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: var(--btn-shadow);
+    }
+
+    .btn-modern:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--btn-shadow-hover);
+    }
+
+    .btn-outline-modern {
+      border: 1.5px solid var(--accent);
+      color: var(--accent) !important;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      background: transparent;
+      box-shadow: var(--btn-shadow);
+    }
+
+    .btn-outline-modern:hover {
+      background: var(--accent);
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: var(--btn-shadow-hover);
+    }
+
+    .btn-icon-only {
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    .btn-square-back {
+      min-width: 132px;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-main) !important;
+      box-shadow: var(--btn-shadow);
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .btn-square-back {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .btn-square-back:hover {
+      background: var(--accent);
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: var(--btn-shadow-hover);
+    }
+
+    .btn-square-back .btn-label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .btn-square-back .btn-icon-small {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .form-select-modern {
+      background-color: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .form-select-modern:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(90, 152, 242, 0.2);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .materi-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .text-opacity {
+      color: var(--text-muted);
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+
+    .popup-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .popup-content {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--panel-shadow);
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .popup-overlay.show .popup-content {
+      transform: translateY(0);
+    }
+
+    .btn-close-popup {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--btn-shadow);
+    }
+
+    .btn-close-popup:hover {
+      color: var(--accent);
+      background: var(--card-bg);
+      transform: scale(1.05);
+      box-shadow: var(--btn-shadow-hover);
+    }
+
+    .neon-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 1.5rem;
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      text-align: center;
+      margin-bottom: 1.25rem;
+      z-index: 1;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    }
+
+    [data-theme="light"] .neon-card {
+      border-color: rgba(148, 163, 184, 0.24);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    }
+
+    .neon-card-subtitle {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .neon-card-title {
+      color: var(--text-main);
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: 0.4px;
+      text-wrap: balance;
+      animation: titleFloat 3s ease-in-out infinite;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .judul-bergerak {
+      display: inline-block;
+      will-change: transform;
+    }
+
+    .neon-status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .status-item {
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 16px;
+      padding: 0.85rem 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    [data-theme="light"] .status-item {
+      background: rgba(255, 255, 255, 0.45);
+      border-color: rgba(148, 163, 184, 0.22);
+    }
+
+    .status-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .status-selesai { color: #22c55e; }
+    .status-sudah { color: #eab308; }
+    .status-belum { color: #ef4444; }
+
+    .status-value {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    @keyframes titleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    #wadah-materi > [class*="col-"] {
+      display: flex;
+    }
+
+    #wadah-materi .glass-card {
+      width: 100%;
+    }
+
+    #btn-ganti-kelas {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    @media (max-width: 576px) {
+      .glass-panel {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+      }
+
+      h1.fw-bold {
+        font-size: 1.8rem;
+      }
+
+      .display-3 {
+        font-size: 3rem;
+      }
+
+      .theme-switch {
+        top: 15px;
+        right: 15px;
+      }
+
+      #theme-toggle-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
+
+      #btn-ganti-kelas {
+        top: 15px;
+        left: 15px;
+      }
+
+      .btn-square-back {
+        min-width: 110px;
+        height: 42px;
+        padding: 0 12px;
+        border-radius: 12px;
+      }
+
+      .popup-content {
+        padding: 2rem 1.4rem;
+      }
+
+      .neon-card {
+        padding: 1.1rem;
+      }
+
+      .neon-card-title {
+        font-size: clamp(1.95rem, 8.8vw, 2.8rem);
+      }
+
+      .neon-status-grid {
+        gap: 0.5rem;
+      }
+
+      .status-item {
+        padding: 0.7rem 0.5rem;
+        border-radius: 14px;
+      }
+
+      .status-label {
+        font-size: 0.8rem;
+      }
+
+      .status-value {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
 </head>
 <body data-theme="dark">
 
