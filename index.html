@@ -638,9 +638,9 @@
         <div id="tombol-final" class="glass-panel mt-5 text-center hidden fade-in-up">
             <i class="bi bi-patch-check-fill text-success display-4 mb-3 d-block"></i>
             <h2 class="fw-bold mb-3">Luar Biasa!</h2>
-            <p class="mb-4 text-opacity">Anda telah menyelesaikan seluruh materi. Silakan laporkan hasil tugas Anda.</p>
+            <p class="mb-4 text-opacity">Anda telah menyelesaikan seluruh materi yang diberikan. Silakan laporkan hasil belajar Anda.</p>
             <a href="https://script.google.com/macros/s/AKfycbyJ3gS5MhaQr_IVMfDrX8Zq9jFuebWB7jc60TQpJAX9JRCvr-4avTZyUxTJtM0UI_cXcw/exec" target="_blank" class="btn btn-modern px-5 rounded-pill">
-                <i class="bi bi-send-fill me-2"></i> Kirim Laporan Tugas
+                <i class="bi bi-send-fill me-2"></i> Mengirim Tugas
             </a>
         </div>
     </div>
@@ -799,7 +799,7 @@
         const btnNext = document.getElementById(`btn-materi-${nextIdx}`);
         if (!btnNext) return;
 
-        let waktuTunggu = 60; // Set 60 detik
+        let waktuTunggu = 30; // Set 60 detik
         btnNext.innerHTML = `<i class="bi bi-hourglass-split me-2"></i> Tunggu ${waktuTunggu} detik`;
 
         // Mencegah timer ganda berjalan bersamaan
